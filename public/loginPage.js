@@ -1,6 +1,7 @@
 "use strict";
 
 //login form
+
 let userForm = new UserForm();
 
 userForm.loginFormCallback = data => {
@@ -14,3 +15,13 @@ userForm.loginFormCallback = data => {
 };
 
 //registration form
+
+userForm.registerFormCallback = data => {
+  ApiConnector.register(data, response => {
+      if (response.success) {
+          location.reload();
+      } else {
+          userForm.setRegisterErrorMessage(response.error);
+      }
+  });
+};
