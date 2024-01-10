@@ -1,6 +1,6 @@
 "use strict";
 
-//login form
+//login
 
 let userForm = new UserForm();
 
@@ -14,7 +14,7 @@ userForm.loginFormCallback = data => {
   });
 };
 
-//registration form
+//registration
 
 userForm.registerFormCallback = data => {
   ApiConnector.register(data, response => {
